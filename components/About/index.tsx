@@ -7,10 +7,10 @@ export default function index() {
         Welcome to my Website ,
       </h2>
       <p className="text-gray-600 break-words dark:text-gray-400 mb-4">
-        Greetings Traveler! I'm Darwin Qiu, a passionate computer science
+        Greetings Traveler! I`&apos;m Darwin Qiu, a passionate computer science
         enthusiast currently navigating the fascinating realm of TU Vienna.
-        Amidst my CS journey, I've not only honed my mathematical prowess and
-        problem-solving skills but also delved into the intricate realms of
+        Amidst my CS journey, I`&apos;ve not only honed my mathematical prowess
+        and problem-solving skills but also delved into the intricate realms of
         algorithms, data structures, and computer networks.
       </p>
       <p className="text-gray-600 break-words dark:text-gray-400 mb-4">
