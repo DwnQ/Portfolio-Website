@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$active-item-indicator-width: 4rem;
+$item-indicator-width: 1rem;
+$gunmetal: #2c3539;
+$gunmetal-complementary: #3595f0;
+
+html {
+  font-size: 20px;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer utilities {
+  .dark .bg-gunmetal {
+    background-color: $gunmetal;
+    border: 1px solid white;
+  }
+
+  .dark .bg-gunmetal-complementary {
+    background-color: $gunmetal;
+    border: 1px solid white;
+  }
+}
+
+@layer components {
+  .item-indicator {
+    @apply dark:border-white;
+
+    border-top: 1px solid rgb(var(--background-end-rgb));
+    width: $item-indicator-width;
+    transform: translateY(33%);
+    padding: 1rem;
+    transition: width 1s;
+  }
+
+  .item-container:hover .item-indicator,
+  .active-item-indicator {
+    border-top: 3px solid rgb(var(--background-end-rgb));
+    width: $active-item-indicator-width;
+    transform: translateY(33%);
+    padding: 1rem;
+    transition: width 0.2s ease-in-out;
+  }
+
+  .dark .item-container:hover .item-indicator,
+  .dark .active-item-indicator {
+    border-top: 3px solid white; /* Change this to match your dark mode border color */
+  }
+
+  .hover-gunmetal:hover {
+    background-color: Aliceblue;
+    border: 1px solid black;
+  }
+
+  .gunmetal-tag {
+    @apply dark:bg-gunmetal-complementary;
+    background-color: rgba(1, 55, 105, 0.95);
+    color: white;
+  }
+
+  .hover-gunmetal {
+    &:hover {
+      @apply dark:bg-gunmetal;
+
+      background-color: Aliceblue;
+      border: 1px solid black;
+    }
+  }
+
+  .dark {
+    .hover-gunmetal-boxshadow {
+      &:hover {
+        border: 1px solid #4b5563; // Adjust the color based on your design
+
+        box-shadow: rgba(240, 46, 170, 0.4) 5px 5px,
+          rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px,
+          rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+      }
+    }
+  }
+
+  .hover-gunmetal-boxshadow {
+    &:hover {
+      @apply border-gray-400;
+
+      box-shadow: rgba(1, 55, 105, 0.4) 5px 5px, rgba(1, 55, 105, 0.3) 10px 10px,
+        rgba(1, 55, 105, 0.2) 15px 15px, rgba(1, 55, 105, 0.1) 20px 20px,
+        rgba(1, 55, 105, 0.05) 25px 25px;
+    }
+  }
+
+  .text-gunmetal {
+    color: $gunmetal;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

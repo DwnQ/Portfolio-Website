@@ -1,0 +1,64 @@
+$gunmetal: #2c3539;
+
+.switch {
+  position: relative;
+  display: inline-block;
+  height: 1.8vw;
+}
+
+.t-45vh {
+  top: 45vh;
+}
+
+.l-15vh {
+  left: 15vh;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.3vw; /* 26px relative to the viewport width */
+  width: 1.3vw; /* 26px relative to the viewport width */
+  left: 0.4vw; /* 4px relative to the viewport width */
+  bottom: 0.2vw; /* 4px relative to the viewport width */
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: $gunmetal;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(2.6vw); /* 26px relative to the viewport width */
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 3.4vw; /* 34px relative to the viewport width */
+}
+
+.slider.round:before {
+  border-radius: 100%;
+}
